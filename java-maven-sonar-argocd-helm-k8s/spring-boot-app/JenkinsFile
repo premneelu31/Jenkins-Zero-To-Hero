@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'maven:3.8.6-eclipse-temurin-17'  // ✅ Java 17 + Maven
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+      image 'cimg/openjdk:17.0-node'  // or use a custom one, see below
+    args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
   stages {
