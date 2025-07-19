@@ -29,6 +29,11 @@ pipeline {
         }
       }
     }
+    stage('Docker Check') {
+      steps {
+        sh 'docker ps'
+      }
+    }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "premkollabathula31/ultimate-cicd-1:${BUILD_NUMBER}"
